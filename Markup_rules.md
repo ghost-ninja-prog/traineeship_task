@@ -2,6 +2,12 @@
 
 ## Команды Git 
 
+`cat .git/config` - выводит содержимое файла config
+
+`git config --list` - выводит конфигурацию
+
+`git config --list --global` - выводит глобальную конфигурацию
+
 `git config user.name "John Doe"` - установка имени пользователя локально
 
 `git config --global user.name "John Doe"` - установка имени пользователя глобально
