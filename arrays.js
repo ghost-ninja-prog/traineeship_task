@@ -35,3 +35,28 @@ const myIndexOf = (arr, searchElement, from = 0) => {
 }
 
 console.log(`muIndexOf result: ${myIndexOf(arr, 3, -12)}`)
+
+
+const myIncludes = (arr, searchElement, from = 0) => {
+    if (from >= arr.length) {
+        return false
+    }
+    if (from < 0) {
+        from = arr.length + (from)
+        from < 0 ? from = 0 : from
+    }
+    for (let i = from; i < arr.length; i++) {
+        if (typeof searchElement === "number" && typeof arr[i] === "number") {
+            if (searchElement === arr[i] || (searchElement !== searchElement && arr[i] !== arr[i])) {
+                return true
+            }
+        } else {
+            if (searchElement === arr[i])  {
+                return true
+            }  
+        }
+    }
+    return false
+}
+
+console.log(`myIncludes result: ${myIncludes(arr, 4, 2)}`)
