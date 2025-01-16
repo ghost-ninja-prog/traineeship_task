@@ -17,3 +17,21 @@ const mySlice = (arr, start = 0, end = null) => {
 }
 
 console.log(`mySlice result: [${mySlice(arr, 3, -1)}]`)
+
+const myIndexOf = (arr, searchElement, from = 0) => {
+    if (from >= arr.length) {
+        return -1
+    }
+    if (from < 0) {
+        from = arr.length - (from * -1)
+        from < 0 ? from = 0 : from
+    }
+    for (let i = from; i < arr.length; i++) {
+        if(arr[i] === searchElement) {
+            return i
+        }
+    }
+    return -1
+}
+
+console.log(`muIndexOf result: ${myIndexOf(arr, 3, -12)}`)
