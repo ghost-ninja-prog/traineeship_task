@@ -1,12 +1,12 @@
 
-const anyString = 'some String, the! length, of which should not be more than 40 characters'
-const anyString2 = 'какая-то строка длинной больше 40 символов'
+const anyString = 'some String the length, of which should not be more than 40 characters'
+const anyString2 = 'какая-то строка, длинной больше 40 символов'
 
 const firstCharacterUppercase = (str) => {
     return str.replace(/\w/, str[0].toUpperCase()) 
 }
 
-// console.log(firstCharacterUppercase(anyString))
+console.log(firstCharacterUppercase(anyString))
 
 const truncateString = (str, quantity) => {
     if (str.length > quantity) {
@@ -25,3 +25,18 @@ const truncateString = (str, quantity) => {
 }
 
 console.log(truncateString(anyString2, 40))
+
+const testingIncludedStrings = (str1, str2) => {
+    if(str1.includes(str2)) {
+        return true
+    } else if(str2.includes(str1)) {
+        return true
+    } else {
+        return false
+    }
+}
+
+const string1 = 'lololo'
+const string2 = 'rere'
+
+console.log(testingIncludedStrings(string2, string1))
