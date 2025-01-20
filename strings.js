@@ -10,23 +10,27 @@ const firstCharacterUppercase = (str) => {
 
 console.log(firstCharacterUppercase(anyString2))
 
+
+
 const truncateString = (str, quantity) => {
-    if (str.length > quantity) {
-        const regexp = /[a-zа-яё0-9-]+[^\s]/ig
-        const arrWords = str.match(regexp)
-        let newStr = ''
-        for(let i = 0; newStr.length <= quantity; i++) {
-            if(`${newStr} ${arrWords[i]}`.length > quantity) {
-                return `${newStr}...`
-            }
-            newStr = newStr.length === 0 ? `${arrWords[i]}` : `${newStr} ${arrWords[i]}`
+
+    if (str.length <= quantity) return str
+    
+    const regexp = /[a-zа-яё0-9-]+[^\s]/ig    
+    const arrWords = str.match(regexp)
+
+    let newStr = ''
+
+    for(let i = 0; newStr.length <= quantity; i++) {
+        if(`${newStr} ${arrWords[i]}`.length > quantity) {
+            return `${newStr}...`
         }
-    } else {
-        return str
-    }
+        newStr = i === 0 ? `${arrWords[i]}` : `${newStr} ${arrWords[i]}`
+    }    
 }
 
-// console.log(truncateString(anyString2, 40))
+console.log(truncateString(anyString, 40))
+
 
 const testingIncludedStrings = (str1, str2) => {
     if(str1.includes(str2)) {
