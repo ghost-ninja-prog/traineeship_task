@@ -18,5 +18,17 @@ logger.log('Hello')
 logger.log('World')
 logger.log('!!!')
 
-
 logger.getLogs()
+
+
+function createRandomGenerator(min, max) {
+    return function() {
+        return Math.floor(Math.random() * (max - min) + min)
+    }
+}
+
+const randomNumber = createRandomGenerator(7, 130)
+
+console.log(randomNumber())
+console.log(randomNumber())
+console.log(randomNumber())
